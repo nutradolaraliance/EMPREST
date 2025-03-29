@@ -350,11 +350,7 @@
           allUrlParams[key] = value;
         });
 
-        // Adicionar referrer e data/hora como metadados
-        allUrlParams.referrer = document.referrer || "";
-        allUrlParams.timestamp = new Date().toISOString();
-
-        // Salvar todos os parâmetros no localStorage
+        // Salvar apenas os parâmetros da URL no localStorage, sem adicionar metadados extras
         localStorage.setItem("urlParameters", JSON.stringify(allUrlParams));
         console.log("Parâmetros da URL salvos:", allUrlParams);
       });
